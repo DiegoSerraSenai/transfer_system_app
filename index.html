@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionamento</title>
+    <style>
+        body {
+            display: none;
+        }
+    </style>
     <script>
         function redirecionar() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -20,11 +25,12 @@
 
         window.onload = function() {
             redirecionar();
+            document.body.style.display = 'block';
         };
     </script>
 </head>
 <body>
-    <h1 style="color:red;">Redirecionando...</h1>
+    <h1 style="color:blue;">Redirecionando...</h1>
     <p>Se você não for redirecionado automaticamente, <a href="#" onclick="redirecionar()">clique aqui</a>.</p>
 </body>
 </html>
