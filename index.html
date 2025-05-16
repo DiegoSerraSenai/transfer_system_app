@@ -7,23 +7,24 @@
     <script>
         function redirecionar() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-            // Verifica se o dispositivo é Android
             if (/android/i.test(userAgent)) {
-                window.location.href = "https://play.google.com/store/apps"; // Link para a Google Play
+                window.location.href = "https://play.google.com/store/apps";
             }
-            // Verifica se o dispositivo é iOS
             else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-                window.location.href = "https://apps.apple.com"; // Link para a App Store
+                window.location.href = "https://apps.apple.com";
             }
             else {
                 alert("Este dispositivo não está suportado.");
             }
         }
+
+        window.onload = function() {
+            redirecionar();
+        };
     </script>
 </head>
-<body onload="redirecionar()">
-    <h1>Redirecionando...</h1>
+<body>
+    <h1 style="color:red;">Redirecionando...</h1>
     <p>Se você não for redirecionado automaticamente, <a href="#" onclick="redirecionar()">clique aqui</a>.</p>
 </body>
 </html>
